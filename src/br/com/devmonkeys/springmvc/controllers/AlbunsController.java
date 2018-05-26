@@ -19,7 +19,7 @@ public class AlbunsController {
 	public String adcicionar(Model model) {
 		
 		model.addAttribute("album", new Album());
-		return "albuns/adicionar";
+		return "album.adicionar.tiles";
 	}
 	
 	@RequestMapping(value = "/adicionar", method = RequestMethod.POST)
@@ -27,9 +27,9 @@ public class AlbunsController {
 		
 		if(result.hasErrors()) {
 			
-			return "albuns/adicionar";
+			return "album.adicionar.tiles";
 		}
 		model.addAttribute("album", novoAlbum); 
-		return "albuns/exibir";
+		return "album.exibir.tiles";
 	}
 }
