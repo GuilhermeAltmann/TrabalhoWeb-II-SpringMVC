@@ -1,16 +1,22 @@
 package br.com.devmonkeys.springmvc.dominios;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -33,6 +39,17 @@ public class Album {
 	@Max(value = 2030, message = "O ano de laçamento deve ser até 2030")
 	@Column(name = "alb_ano_lancamento", nullable = false)
 	private int anoDeLancamento;
+
+	@OneToMany(mappedBy = "album", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
+	private Set<Musica> musicas;
+	
+	public Set<Musica> getMusicas() {
+		return musicas;
+	}
+
+	public void setMusicas(Set<Musica> musicas) {
+		this.musicas = musicas;
+	}
 
 	public Long getId() {
 		return id;
