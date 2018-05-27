@@ -38,7 +38,7 @@
           class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close">
           <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-          <property name="url" value="jdbc:mysql://localhost:3306/springmvc?useTimezone=true;serverTimezone=UTC;"></property>
+          <property name="url" value="jdbc:mysql://localhost:3306/springmvc"></property>
           <property name="username" value="root"></property>
           <property name="password" value=""></property>
     </bean>
@@ -53,13 +53,13 @@
     	  	<props>
     	  		<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
     	  		<prop key="hibernate.show_sql">true</prop>
-    	  		<prop key="hibernate.hbm2dll.auto">update</prop>
+    	  		<prop key="hibernate.hbm2ddl.auto">update</prop>
     	  	</props>
     	  </property>
     </bean>
     <bean id="transactionManager"
           class="org.springframework.orm.jpa.JpaTransactionManager">
-          <property name="entityManagerFaction" ref="entityManagerFactory"></property>
+          <property name="entityManagerFactory" ref="entityManagerFactory"></property>
     </bean>
-    <jpa:repositories base-package="br.com.devmonekys.springmvc.repositorios"></jpa:repositories>
+    <jpa:repositories base-package="br.com.devmonkeys.springmvc.repositorios"></jpa:repositories>
 </beans>

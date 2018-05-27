@@ -18,9 +18,11 @@
 	<div style="width: 100%">
 		<tiles:insertAttribute name="header" ignore="false"></tiles:insertAttribute>
 	</div>
-	<div class="row" style="width: 100%">
-		<div class="col-lg-12">
-			<tiles:insertAttribute name="body" ignore="false"></tiles:insertAttribute>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<tiles:insertAttribute name="body" ignore="false"></tiles:insertAttribute>
+			</div>
 		</div>
 	</div>
 	<div class="row" style="width: 100%">

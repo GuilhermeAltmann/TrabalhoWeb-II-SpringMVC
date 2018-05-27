@@ -14,8 +14,12 @@
 		<put-attribute name="title" value="Adição de álbuns"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/albuns/adicionar.jsp"></put-attribute>
 	</definition>
-	<definition name="album.exibir.tiles" extends="layout.tiles">
+	<definition name="album.listar.tiles" extends="layout.tiles">
 		<put-attribute name="title" value="Exibição de álbuns"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/albuns/exibir.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/albuns/listar.jsp"></put-attribute>
+	</definition>
+	<definition name="album.alterar.tiles" extends="layout.tiles">
+		<put-attribute name="title" value="Alteração do álbum"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/albuns/alterar.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>
