@@ -18,11 +18,15 @@
 	<div style="width: 100%">
 		<tiles:insertAttribute name="header" ignore="false"></tiles:insertAttribute>
 	</div>
-	<div style="width: 100%">
-		<tiles:insertAttribute name="body" ignore="false"></tiles:insertAttribute>
+	<div class="row" style="width: 100%">
+		<div class="col-lg-12">
+			<tiles:insertAttribute name="body" ignore="false"></tiles:insertAttribute>
+		</div>
 	</div>
-	<div style="width: 100%">
-		<tiles:insertAttribute name="footer" ignore="false"></tiles:insertAttribute>
+	<div class="row" style="width: 100%">
+		<div class="col-lg-12">
+			<tiles:insertAttribute name="footer" ignore="false"></tiles:insertAttribute>
+		</div>
 	</div>
 </body>
 </html>
