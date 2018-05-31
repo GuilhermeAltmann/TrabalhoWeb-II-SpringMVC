@@ -68,7 +68,7 @@ public class MusicasController {
 		return "musica.alterar.tiles";
 	}
 	
-	@RequestMapping(value = "/alerar", method = RequestMethod.POST)
+	@RequestMapping(value = "/alterar", method = RequestMethod.POST)
 	public String alterar(@ModelAttribute("musica") @Valid Musica musica, BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {

@@ -1,7 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <h2>Listagem de álbuns</h2>
 <br />
-<table class="table table-striped">
+<div class="row">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label>Álbum a ser pesquisado:</label>
+			<input type="text" id="txt-pesquisa" class="form-control" />
+		</div>
+		<button id="btn-pesquisar" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
+	</div>
+</div>
+<table class="table table-striped" id="tbl-albuns">
 	<thead>
 		<tr>
 			<th>ID</th>
@@ -37,3 +46,29 @@
 </table>
 <br />
 <a href="/trabalho-dois-spring/albuns/adicionar" class="btn btn-default" role="button">Criar</a>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$('#btn-pesquisar').on('click', function(){
+		
+		var textoPesquisa = $('#txt-pesquisa').val();
+		
+		$.ajax({
+			'method': 'GET',
+			'url': '/trabalho-dois-spring/albuns/porNome/' + textoPesquisa
+		}).done(function(data){
+			
+			$('#tbl-albuns tbody > tr').remove();
+			$('#tbl-albuns tbody').append('<tr><td>' + data.id +'</td><td>' + data.nome + '</td><td>' + data.anoDeLancamento +'</td>' + 
+					'<td>' + '<a href="/trabalho-dois-spring/albuns/alterar/' + data.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' + '</td>' +
+					'<td>' + '<a href="/trabalho-dois-spring/albuns/excluir/' + data.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' + '</td>' +
+					'</tr>');
+			
+			
+		}).fail(function() {
+			
+		    alert( "error" );
+		});
+	});
+});
+</script>

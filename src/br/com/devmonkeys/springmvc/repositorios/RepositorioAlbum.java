@@ -10,4 +10,5 @@ import br.com.devmonkeys.springmvc.dominios.Album;
 
 public interface RepositorioAlbum extends JpaRepository<Album, Long>{
 
+	Album findByNome(String nome);
 }

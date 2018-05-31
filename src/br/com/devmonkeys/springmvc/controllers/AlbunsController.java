@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.devmonkeys.springmvc.dominios.Album;
 import br.com.devmonkeys.springmvc.repositorios.RepositorioAlbum;
@@ -79,5 +80,11 @@ public class AlbunsController {
 		repositorio.delete(id);
 		
 		return "redirect:/albuns/listar";
+	}
+	
+	@RequestMapping(value = "pornome/{nome}", method = RequestMethod.GET, produces = "application/json")
+	public @ResponseBody Album pesquisarPorNome(@PathVariable("nome") String nomeAlbum) {
+		
+		return repositorio.findByNome(nomeAlbum);
 	}
 }
