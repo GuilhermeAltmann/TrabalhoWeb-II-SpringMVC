@@ -35,4 +35,13 @@
 		<put-attribute name="title" value="Alteração de música"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/musicas/alterar.jsp"></put-attribute>
 	</definition>
+	<!-- ** Usuarios -->
+	<definition name="usuario.adicionar.tiles" extends="layout.tiles">
+		<put-attribute name="title" value="Adição de Usuário"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/usuarios/adicionar.jsp"></put-attribute>
+	</definition>
+	<definition name="usuario.listar.tiles" extends="layout.tiles">
+		<put-attribute name="title" value="Exibição de Usuários"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/usuarios/listar.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

@@ -10,5 +10,6 @@ import br.com.devmonkeys.springmvc.dominios.Album;
 
 public interface RepositorioAlbum extends JpaRepository<Album, Long>{
 
-	Album findByNome(String nome);
+	@Query("SELECT a FROM Album a WHERE a.nome LIKE %:nome%")
+	List<Album> findByNome(@Param("nome") String nome);
 }

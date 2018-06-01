@@ -1,4 +1,10 @@
 br/com/devmonkeys/springmvc/repositorios/RepositorioAlbum.class
+br/com/devmonkeys/springmvc/repositorios/RepositorioUsuario.class
 br/com/devmonkeys/springmvc/dominios/Album.class
+br/com/devmonkeys/springmvc/controllers/UsuariosController.class
+br/com/devmonkeys/springmvc/controllers/MusicasController.class
+br/com/devmonkeys/springmvc/dominios/Usuario.class
+br/com/devmonkeys/springmvc/repositorios/RepositorioMusica.class
+br/com/devmonkeys/springmvc/dominios/Musica.class
 br/com/devmonkeys/springmvc/controllers/AlbunsController.class
 br/com/devmonkeys/springmvc/controllers/HelloController.class

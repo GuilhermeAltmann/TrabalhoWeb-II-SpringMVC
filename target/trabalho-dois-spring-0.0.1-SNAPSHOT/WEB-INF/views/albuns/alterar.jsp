@@ -11,9 +11,6 @@
 		<div class="form-group">
 			<label class="form-control-label">Id:</label>
 			<form:input path="id" cssClass="form-control" readonly="true"/>
-			<div class="invalid-feedback">
-				<form:errors path="nome"></form:errors>
-			</div>
 		</div>
 		<div class="form-group">
 			<label class="form-control-label">Nome:</label>

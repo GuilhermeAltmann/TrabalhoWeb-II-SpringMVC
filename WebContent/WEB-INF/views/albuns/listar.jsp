@@ -2,12 +2,14 @@
 <h2>Listagem de álbuns</h2>
 <br />
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-9">
 		<div class="form-group">
 			<label>Álbum a ser pesquisado:</label>
 			<input type="text" id="txt-pesquisa" class="form-control" />
 		</div>
-		<button id="btn-pesquisar" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
+	</div>
+	<div class="col-md-3">
+		<button id="btn-pesquisar" class="btn btn-default" style="margin-top:26px;"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
 	</div>
 </div>
 <table class="table table-striped" id="tbl-albuns">
@@ -55,14 +57,20 @@ $(document).ready(function(){
 		
 		$.ajax({
 			'method': 'GET',
-			'url': '/trabalho-dois-spring/albuns/porNome/' + textoPesquisa
+			'url': '/trabalho-dois-spring/albuns/pornome',
+		    'data': {'nome': textoPesquisa}
 		}).done(function(data){
 			
 			$('#tbl-albuns tbody > tr').remove();
-			$('#tbl-albuns tbody').append('<tr><td>' + data.id +'</td><td>' + data.nome + '</td><td>' + data.anoDeLancamento +'</td>' + 
-					'<td>' + '<a href="/trabalho-dois-spring/albuns/alterar/' + data.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' + '</td>' +
-					'<td>' + '<a href="/trabalho-dois-spring/albuns/excluir/' + data.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' + '</td>' +
-					'</tr>');
+			
+			$.each(data, function(index, album){
+				
+				$('#tbl-albuns tbody').append('<tr><td>' + album.id +'</td><td>' + album.nome + '</td><td>' + album.anoDeLancamento +'</td>' + 
+						'<td>' + '<a href="/trabalho-dois-spring/albuns/alterar/' + album.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' + '</td>' +
+						'<td>' + '<a href="/trabalho-dois-spring/albuns/excluir/' + album.id + '" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-remove"></i></a>' + '</td>' +
+						'</tr>');
+			});
+			
 			
 			
 		}).fail(function() {
