@@ -35,7 +35,7 @@ public class AlbunsController {
 	}
 	
 	@RequestMapping(value = "/adicionar", method = RequestMethod.GET)
-	public String adcicionar(Model model) {
+	public String adicionar(Model model) {
 		
 		model.addAttribute("album", new Album());
 		return "album.adicionar.tiles";

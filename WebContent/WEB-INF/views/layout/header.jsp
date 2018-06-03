@@ -23,28 +23,28 @@
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Albuns <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/trabalho-dois-spring/albuns/listar">Listar</a></li>
-							<li><a href="/trabalho-dois-spring/albuns/adicionar">Cadastrar</a></li>
-						</ul></li>
-				</ul>
-				<ul class="nav navbar-nav">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Musicas <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/trabalho-dois-spring/musicas/listar">Listar</a></li>
-							<li><a href="/trabalho-dois-spring/musicas/adicionar">Cadastrar</a></li>
-						</ul></li>
-				</ul>
-				<ul class="nav navbar-nav">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Usuarios <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/usuarios/listar">Listar</a></li>
 							<li><a href="/trabalho-dois-spring/usuarios/adicionar">Cadastrar</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Alunos <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/trabalho-dois-spring/alunos/listar">Listar</a></li>
+							<li><a href="/trabalho-dois-spring/alunos/adicionar">Cadastrar</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Professores <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/trabalho-dois-spring/professores/listar">Listar</a></li>
+							<li><a href="/trabalho-dois-spring/professores/adicionar">Cadastrar</a></li>
 						</ul></li>
 				</ul>
 				<ul class="pull-right nav navbar-nav">
