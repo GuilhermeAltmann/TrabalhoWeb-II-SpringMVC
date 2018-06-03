@@ -1,10 +1,15 @@
 package br.com.devmonkeys.springmvc.dominios;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -55,6 +60,9 @@ public class Aluno {
 	@NotEmpty(message = "O cpf é obrigatório")
 	@Column(name = "alu_cpf", length = 14, nullable = false)
 	private String cpf;
+	
+	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
+	private Set<Nota> notas;
 
 	public Long getId() {
 		return id;
@@ -110,6 +118,14 @@ public class Aluno {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public Set<Nota> getNotas() {
+		return notas;
+	}
+
+	public void setNotas(Set<Nota> notas) {
+		this.notas = notas;
 	}
 }
 

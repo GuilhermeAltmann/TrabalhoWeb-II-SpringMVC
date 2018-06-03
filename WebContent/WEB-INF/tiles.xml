@@ -79,7 +79,7 @@
 		<put-attribute name="title" value="Alteração de aluno"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/professores/alterar.jsp"></put-attribute>
 	</definition>
-		<!-- ** Disciplinas -->
+	<!-- ** Disciplinas -->
 	<definition name="disciplina.adicionar.tiles" extends="layout.tiles">
 		<put-attribute name="title" value="Adição de disciplina"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/disciplinas/adicionar.jsp"></put-attribute>
@@ -91,5 +91,18 @@
 	<definition name="disciplina.alterar.tiles" extends="layout.tiles">
 		<put-attribute name="title" value="Alteração de disciplina"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/disciplinas/alterar.jsp"></put-attribute>
+	</definition>
+	<!-- ** Notas -->
+	<definition name="nota.adicionar.tiles" extends="layout.tiles">
+		<put-attribute name="title" value="Adição de nota"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/notas/adicionar.jsp"></put-attribute>
+	</definition>
+	<definition name="nota.listar.tiles" extends="layout.tiles">
+		<put-attribute name="title" value="Exibição de notas"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/notas/listar.jsp"></put-attribute>
+	</definition>
+	<definition name="nota.alterar.tiles" extends="layout.tiles">
+		<put-attribute name="title" value="Alteração de nota"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/notas/alterar.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>

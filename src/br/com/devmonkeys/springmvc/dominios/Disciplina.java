@@ -1,5 +1,8 @@
 package br.com.devmonkeys.springmvc.dominios;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -46,6 +50,9 @@ public class Disciplina {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "pro_id")
 	private Professor professor;
+	
+	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
+	private Set<Nota> notas;
 
 	public Long getId() {
 		return id;
@@ -85,5 +92,13 @@ public class Disciplina {
 
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
+	}
+
+	public Set<Nota> getNotas() {
+		return notas;
+	}
+
+	public void setNotas(Set<Nota> notas) {
+		this.notas = notas;
 	}
 }
