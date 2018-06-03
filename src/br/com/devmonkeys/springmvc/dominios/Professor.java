@@ -1,10 +1,15 @@
 package br.com.devmonkeys.springmvc.dominios;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -63,6 +68,8 @@ public class Professor {
 	@Column(name = "pro_salario", nullable = false)
 	private Double salario;
 
+	@OneToMany(mappedBy = "professor", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
+	private Set<Disciplina> disciplinas;
 
 	public Long getId() {
 		return id;
@@ -142,5 +149,16 @@ public class Professor {
 	public void setSalario(Double salario) {
 		this.salario = salario;
 	}
+
+
+	public Set<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+
+	public void setDisciplinas(Set<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	
 	
 }
