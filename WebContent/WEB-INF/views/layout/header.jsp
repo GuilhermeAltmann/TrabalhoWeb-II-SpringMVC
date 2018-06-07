@@ -12,7 +12,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Gerenciador de notas</a>
+			<a class="navbar-brand" href="/trabalho-dois-spring/home/bemvindo">Gerenciador de notas</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
