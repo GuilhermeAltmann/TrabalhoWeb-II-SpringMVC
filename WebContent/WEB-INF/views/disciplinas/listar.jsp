@@ -34,7 +34,7 @@
 				</tr>
 			</c:forEach>
 		</c:if>
-		<c:if test="${empty musicas}">
+		<c:if test="${empty disciplinas}">
 			<tr>
 				<td colspan="6" class="text-center">Sem dados para apresentar</td>
 			</tr>
