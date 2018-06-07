@@ -27,7 +27,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/usuarios/listar">Listar</a></li>
 							<li><a href="/trabalho-dois-spring/usuarios/adicionar">Cadastrar</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -36,7 +37,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/alunos/listar">Listar</a></li>
 							<li><a href="/trabalho-dois-spring/alunos/adicionar">Cadastrar</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -45,7 +47,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/professores/listar">Listar</a></li>
 							<li><a href="/trabalho-dois-spring/professores/adicionar">Cadastrar</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -54,7 +57,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/disciplinas/listar">Listar</a></li>
 							<li><a href="/trabalho-dois-spring/disciplinas/adicionar">Cadastrar</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -63,7 +67,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/notas/listar">Listar</a></li>
 							<li><a href="/trabalho-dois-spring/notas/adicionar">Cadastrar</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 				<ul class="pull-right nav navbar-nav">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -71,7 +76,8 @@
 						aria-expanded="false">${principal.username} <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/trabalho-dois-spring/logout">Sair</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
