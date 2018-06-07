@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<h2>Listagem de músicas</h2>
+<h2>Listagem de notas</h2>
 <br />
 
 <table class="table table-striped">

@@ -74,7 +74,7 @@ public class NotasController {
 	public String alterar(@PathVariable("id") Long id, Model model) {
 		
 		Nota nota = repoNota.findOne(id);
-	    model.addAttribute("musica", nota);
+	    model.addAttribute("nota", nota);
 	    model.addAttribute("alunos", repoAlu.findAll());
 		model.addAttribute("disciplinas", repoDisc.findAll());
 		
