@@ -2,7 +2,17 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <h2>Listagem de notas</h2>
 <br />
-
+<div class="row">
+	<div class="col-md-9">
+		<div class="form-group">
+			<label>Aluno a ser pesquisado:</label>
+			<input type="text" id="txt-pesquisa" class="form-control" />
+		</div>
+	</div>
+	<div class="col-md-3">
+		<button id="btn-pesquisar" class="btn btn-default" style="margin-top:26px;"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
+	</div>
+</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
