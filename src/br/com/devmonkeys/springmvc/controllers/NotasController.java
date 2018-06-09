@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.devmonkeys.springmvc.dominios.Nota;
 import br.com.devmonkeys.springmvc.repositorios.RepositorioAluno;
@@ -108,5 +109,11 @@ public class NotasController {
 		
 		repoNota.delete(nota);
 		return "redirect:/notas/listar";
+	}
+	
+	@RequestMapping(value = "pornome", method = RequestMethod.GET, produces = "application/json")
+	public @ResponseBody List<Nota> pesquisarPorNome(@RequestParam(name = "nome", defaultValue = "") String nomeAluno) {
+		
+		return repoNota.findByAlunoNomeContaining(nomeAluno);
 	}
 }

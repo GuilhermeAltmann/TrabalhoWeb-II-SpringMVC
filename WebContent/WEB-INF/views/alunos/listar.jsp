@@ -40,9 +40,16 @@
 						<a href="/trabalho-dois-spring/alunos/alterar/${aluno.id}" class="btn btn-primary" role="button">
 							<i class="glyphicon glyphicon-pencil"></i>
 						</a>
-						<a href="/trabalho-dois-spring/alunos/excluir/${aluno.id}" class="btn btn-danger" role="button">
-							<i class="glyphicon glyphicon-remove"></i>
-						</a>
+						<c:if test="${empty aluno.getNotas()}">
+							<a href="/trabalho-dois-spring/alunos/excluir/${aluno.id}" class="btn btn-danger" role="button">
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</c:if>
+						<c:if test="${!empty aluno.getNotas()}">
+							<a href="#" class="btn btn-danger disabled" role="button" >
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</c:if>
 					</td>
 				</tr>
 			</c:forEach>
@@ -56,35 +63,3 @@
 </table>
 <br />
 <a href="/trabalho-dois-spring/alunos/adicionar" class="btn btn-default" role="button">Criar</a>
-<script type="text/javascript">
-$(document).ready(function(){
-	
-	$('#btn-pesquisar').on('click', function(){
-		
-		var textoPesquisa = $('#txt-pesquisa').val();
-		
-		$.ajax({
-			'method': 'GET',
-			'url': '/trabalho-dois-spring/albuns/pornome',
-		    'data': {'nome': textoPesquisa}
-		}).done(function(data){
-			
-			$('#tbl-albuns tbody > tr').remove();
-			
-			$.each(data, function(index, album){
-				
-				$('#tbl-albuns tbody').append('<tr><td>' + album.id +'</td><td>' + album.nome + '</td><td>' + album.anoDeLancamento +'</td>' + 
-						'<td>' + '<a href="/trabalho-dois-spring/albuns/alterar/' + album.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' + '</td>' +
-						'<td>' + '<a href="/trabalho-dois-spring/albuns/excluir/' + album.id + '" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-remove"></i></a>' + '</td>' +
-						'</tr>');
-			});
-			
-			
-			
-		}).fail(function() {
-			
-		    alert( "error" );
-		});
-	});
-});
-</script>

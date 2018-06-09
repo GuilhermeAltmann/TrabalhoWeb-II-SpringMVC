@@ -76,6 +76,7 @@ public class AlunosController {
 	@RequestMapping(value = "/excluir/{id}", method = RequestMethod.GET)
 	public String excluir(@PathVariable("id") Long id) {
 		
+		
 		repositorio.delete(id);
 		
 		return "redirect:/alunos/listar";

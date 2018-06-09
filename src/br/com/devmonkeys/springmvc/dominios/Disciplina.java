@@ -20,6 +20,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "dis_disciplina")
 public class Disciplina {
@@ -47,11 +50,13 @@ public class Disciplina {
 	@Column(name = "pro_carga_horaria", nullable = false)
 	private int cargaHoraria;
 	
+	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "pro_id")
 	private Professor professor;
 	
-	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
+	@JsonBackReference
+	@OneToMany(mappedBy = "disciplina", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private Set<Nota> notas;
 
 	public Long getId() {

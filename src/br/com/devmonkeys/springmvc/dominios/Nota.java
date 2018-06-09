@@ -13,6 +13,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "not_notas")
 public class Nota {
@@ -44,10 +46,12 @@ public class Nota {
 	@Column(name = "not_media", nullable = false)
 	private Double media;
 	
+	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "dis_id")
 	private Disciplina disciplina;
 	
+	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "alu_id")
 	private Aluno aluno;

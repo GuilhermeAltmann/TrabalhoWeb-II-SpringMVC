@@ -1,17 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<h2>Listagem de Alunos</h2>
+<h2>Listagem de Professores</h2>
 <br />
-<!-- <div class="row">
-	<div class="col-md-9">
-		<div class="form-group">
-			<label>Álbum a ser pesquisado:</label>
-			<input type="text" id="txt-pesquisa" class="form-control" />
-		</div>
-	</div>
-	<div class="col-md-3">
-		<button id="btn-pesquisar" class="btn btn-default" style="margin-top:26px;"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
-	</div>
-</div> -->
 <table class="table table-striped" id="tbl-albuns">
 	<thead>
 		<tr>
@@ -42,9 +31,16 @@
 						<a href="/trabalho-dois-spring/professores/alterar/${professor.id}" class="btn btn-primary" role="button">
 							<i class="glyphicon glyphicon-pencil"></i>
 						</a>
-						<a href="/trabalho-dois-spring/professores/excluir/${professor.id}" class="btn btn-danger" role="button">
-							<i class="glyphicon glyphicon-remove"></i>
-						</a>
+						<c:if test="${empty professor.getDisciplinas()}">
+							<a href="/trabalho-dois-spring/professores/excluir/${professor.id}" class="btn btn-danger" role="button">
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</c:if>
+						<c:if test="${!empty professor.getDisciplinas()}">
+							<a href="#" class="btn btn-danger disabled" role="button" >
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</c:if>
 					</td>
 				</tr>
 			</c:forEach>

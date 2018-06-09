@@ -17,6 +17,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "pro_professores")
 public class Professor {
@@ -68,7 +70,8 @@ public class Professor {
 	@Column(name = "pro_salario", nullable = false)
 	private Double salario;
 
-	@OneToMany(mappedBy = "professor", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
+	@JsonBackReference
+	@OneToMany(mappedBy = "professor", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private Set<Disciplina> disciplinas;
 
 	public Long getId() {

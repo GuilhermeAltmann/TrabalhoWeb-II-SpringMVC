@@ -22,14 +22,21 @@
 					<td>${disciplina.nome}</td>
 					<td>${disciplina.codigo}</td>
 					<td>${disciplina.cargaHoraria}</td>
-					<td>${disciplina.professor.nome}</td>
+					<td>${disciplina.professor.nome}</td>	
 					<td>
 						<a href="/trabalho-dois-spring/disciplinas/alterar/${disciplina.id}" class="btn btn-primary" role="button">
 							<i class="glyphicon glyphicon-pencil"></i>
 						</a>
-						<a href="/trabalho-dois-spring/disciplinas/excluir/${disciplina.id}" class="btn btn-danger" role="button">
-							<i class="glyphicon glyphicon-remove"></i>
-						</a>
+						<c:if test="${empty disciplina.getNotas()}">
+							<a href="/trabalho-dois-spring/disciplinas/excluir/${disciplina.id}" class="btn btn-danger" role="button">
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</c:if>
+						<c:if test="${!empty disciplina.getNotas()}">
+							<a href="#" class="btn btn-danger disabled" role="button" >
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</c:if>
 					</td>
 				</tr>
 			</c:forEach>

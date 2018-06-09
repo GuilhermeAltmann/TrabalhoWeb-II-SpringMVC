@@ -13,7 +13,7 @@
 		<button id="btn-pesquisar" class="btn btn-default" style="margin-top:26px;"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
 	</div>
 </div>
-<table class="table table-striped">
+<table class="table table-striped" id="tbl-notas">
 	<thead>
 		<tr>
 			<th>ID</th>
@@ -65,3 +65,54 @@
 </table>
 <br />
 <a href="/trabalho-dois-spring/notas/adicionar" class="btn btn-default" role="button">Criar</a>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$('#btn-pesquisar').on('click', function(){
+		
+		var textoPesquisa = $('#txt-pesquisa').val();
+		
+		$.ajax({
+			'method': 'GET',
+			'url': '/trabalho-dois-spring/notas/pornome',
+		    'data': {'nome': textoPesquisa}
+		}).done(function(data){
+			
+			$('#tbl-notas tbody > tr').remove();
+			
+			$.each(data, function(index, nota){
+				
+				var status = '';
+				
+				if(nota.media >= 6){
+					
+					status = 'Aprovado';
+				}else if(nota.media >= 4 && nota.media < 6){
+					
+					status = 'Faça prova substitutiva';
+				}else{
+					
+					status = 'Reprovado';
+				}
+				
+				$('#tbl-notas tbody').append('<tr><td>' + nota.id 
+						+ '</td><td>' + nota.disciplina.nome 
+						+ '</td><td>' + nota.aluno.nome
+						+ '</td><td>' + nota.nota1 
+						+ '</td><td>' + nota.nota2
+						+ '</td><td>' + nota.nota3
+						+ '</td><td>' + status +'</td>' + 
+						'<td>' + '<a href="/trabalho-dois-spring/notas/alterar/' + nota.id + '" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-pencil"></i></a>' +
+					    '<a href="/trabalho-dois-spring/notas/excluir/' + nota.id + '" class="btn btn-danger" role="button"><i class="glyphicon glyphicon-remove"></i></a>' + '</td>' +
+						'</tr>');
+			});
+			
+			
+			
+		}).fail(function() {
+			
+		    alert( "error" );
+		});
+	});
+});
+</script>
